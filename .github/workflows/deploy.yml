@@ -29,7 +29,8 @@ jobs:
         yarn install
         yarn build
         mv build/* ../dist
-        cd ..
+        cd ../build
+        ls -la
         git config user.name "JoseBS"
         git config user.email "juanjoseba98@gmail.com"
         git config pull.rebase false
