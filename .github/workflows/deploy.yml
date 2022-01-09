@@ -27,16 +27,16 @@ jobs:
       with:
         node-version: 14.17
     
-      - name: Install, Build and Deploy
-        run: |
-          cd tmp/img-search
-          yarn install
-          yarn build
-          mv build/* ../../dist
-          cd ..
-          rm -rf img-search
-          git config user.name "Automerge Bot"
-          git config user.email "bot@example.com"
-          git config pull.rebase false
-          git pull ${{env.MASTER_REPO}} ${{env.MASTER_BRANCH}}
-          git push
+    - name: Install, Build and Deploy
+      run: |
+        cd tmp/img-search
+        yarn install
+        yarn build
+        mv build/* ../../dist
+        cd ..
+        rm -rf img-search
+        git config user.name "Automerge Bot"
+        git config user.email "bot@example.com"
+        git config pull.rebase false
+        git pull ${{env.MASTER_REPO}} ${{env.MASTER_BRANCH}}
+        git push
