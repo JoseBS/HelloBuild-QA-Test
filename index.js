@@ -1,5 +1,6 @@
-function unusedFunction() {
+function usedFunction () {
   console.log('This is a testFunction for GitHub action')
 }
-var i = 0
-console.log("i: "+i)
+usedFunction()
+const i = 0
+console.log('i: ' + i)
