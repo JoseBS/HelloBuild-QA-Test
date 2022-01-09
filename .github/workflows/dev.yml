@@ -21,10 +21,16 @@ jobs:
           node-version: 14.17
 
       - name: Install dependences
-        run: yarn install
+        run: |
+          cd img-search
+          yarn install
 
       - name: Check Lint 
-        run: yarn lint
+        run: |
+          cd img-search
+          yarn lint
 
       - name: Run tests
-        run: yarn test
+        run: |
+          cd img-search
+          yarn test
