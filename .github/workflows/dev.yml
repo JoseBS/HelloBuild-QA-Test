@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: DevYml check pull requests
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow pull request events but only for the dev branch
+  pull_request:
+    branches: [ dev ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  lintAndTest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.17
+
+      - name: Install dependences
+        run: yarn install
+
+      - name: Check Lint 
+        run: yarn lint
+
+      - name: Run tests
+        run: yarn test
