@@ -8,7 +8,6 @@ on:
 
 env:
   MY_REPO: https://JoseBS:${{secrets.GITHUB_TOKEN}}@github.com/JoseBS/HelloBuild-QA-Test.git
-  MY_BRANCH: dev
   MASTER_REPO: https://github.com/JoseBS/HelloBuild-QA-Test.git
   MASTER_BRANCH: main
 
@@ -17,11 +16,7 @@ jobs:
   merge:
     runs-on: ubuntu-latest
     steps:
-    - name: Merge with master
-      run: git clone ${{env.MY_REPO}} -b ${{env.MY_BRANCH}} tmp
-    
     - uses: actions/checkout@v2
-
     - name: Setup Node
       uses: actions/setup-node@v1
       with:
@@ -30,14 +25,13 @@ jobs:
     - name: Install, Build and Deploy
       run: |
         ls -la
-        cd tmp/img-search
+        cd ./img-search
         yarn install
         yarn build
-        mv build/* ../../dist
+        mv build/* ../dist
         cd ..
-        rm -rf img-search
-        git config user.name "Automerge Bot"
-        git config user.email "bot@example.com"
+        git config user.name "JoseBS"
+        git config user.email "juanjoseba98@gmail.com"
         git config pull.rebase false
         git pull ${{env.MASTER_REPO}} ${{env.MASTER_BRANCH}}
         git push
