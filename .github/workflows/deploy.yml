@@ -29,6 +29,7 @@ jobs:
     
     - name: Install, Build and Deploy
       run: |
+        ls -la
         cd tmp/img-search
         yarn install
         yarn build
