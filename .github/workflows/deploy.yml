@@ -1,0 +1,42 @@
+name: DevYml check pull requests
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow pull request events but only for the dev branch
+  push:
+    branches: [ dev ]
+
+env:
+  MY_REPO: https://JoseBS:${{secrets.GITHUB_TOKEN}}@github.com/JoseBS/HelloBuild-QA-Test.git
+  MY_BRANCH: dev
+  MASTER_REPO: https://github.com/JoseBS/HelloBuild-QA-Test.git
+  MASTER_BRANCH: main
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Merge with master
+      run: git clone ${{env.MY_REPO}} -b ${{env.MY_BRANCH}} tmp
+    
+    - uses: actions/checkout@v2
+
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.17
+    
+      - name: Install, Build and Deploy
+        run: |
+          cd tmp/img-search
+          yarn install
+          yarn build
+          mv build/* ../../dist
+          cd ..
+          rm -rf img-search
+          git config user.name "Automerge Bot"
+          git config user.email "bot@example.com"
+          git config pull.rebase false
+          git pull ${{env.MASTER_REPO}} ${{env.MASTER_BRANCH}}
+          git push
