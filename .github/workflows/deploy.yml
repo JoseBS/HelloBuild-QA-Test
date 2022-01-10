@@ -32,7 +32,6 @@ jobs:
         cd ./docs
         ls -la
         cd ..
-        rm -rf ./img-search
         git add .
         git commit -m "Auto deploy" -a
         git push
