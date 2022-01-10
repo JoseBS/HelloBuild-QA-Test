@@ -22,13 +22,14 @@ jobs:
         cd ./img-search
         yarn install
         yarn build
-        mv build/* ../dist
-        cd ../dist
+        rm -rf ./docs
+        mv build/* ../docs
+        cd ../docs
         ls -la
         cd ..
         git config user.name "JoseBS"
         git config user.email "juanjoseba98@gmail.com"
-        cd ./dist
+        cd ./docs
         ls -la
         cd ..
         rm -rf ./img-search
