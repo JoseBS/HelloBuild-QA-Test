@@ -18,20 +18,14 @@ jobs:
     
     - name: Install, Build and Deploy
       run: |
-        ls -la
         cd ./img-search
         yarn install
         yarn build
-        rm -rf ./docs
-        mv build/* ../docs
-        cd ../docs
-        ls -la
+        rm -rf ../docs
+        mv build/* ../docs/HelloBuild-QA-Test
         cd ..
         git config user.name "JoseBS"
         git config user.email "juanjoseba98@gmail.com"
-        cd ./docs
-        ls -la
-        cd ..
         git add .
         git commit -m "Auto deploy" -a
         git push
