@@ -19,32 +19,16 @@ jobs:
     - name: Install, Build and Deploy
       run: |
         cd ./img-search
-        echo "Proyect"
-        ls -la
         yarn install
         yarn build
         cd ..
-        echo "Repo Root with old docs directory"
-        ls -la
         rm -rf docs
-        echo "Repo Root without docs directory"
-        ls -la
         mkdir docs
-        echo "Repo Root with new docs directory"
-        ls -la
         cd docs
-        echo "empty docs"
-        ls -la
         cd ..
-        echo "Repo root"
-        ls -la
         cd ./img-search
-        echo "Proyect"
-        ls -la
         mv build/* ../docs
         cd ..
-        echo "Repo root"
-        ls -la
         git config user.name "JoseBS"
         git config user.email "juanjoseba98@gmail.com"
         git add .
