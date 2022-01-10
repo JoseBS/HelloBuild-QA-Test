@@ -5,12 +5,6 @@ on:
   # Triggers the workflow pull request events but only for the dev branch
   push:
     branches: [ dev ]
-
-env:
-  MY_REPO: https://JoseBS:${{secrets.GITHUB_TOKEN}}@github.com/JoseBS/HelloBuild-QA-Test.git
-  MASTER_REPO: https://github.com/JoseBS/HelloBuild-QA-Test.git
-  MASTER_BRANCH: main
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   merge:
@@ -31,10 +25,13 @@ jobs:
         mv build/* ../dist
         cd ../dist
         ls -la
+        cd ..
         git config user.name "JoseBS"
         git config user.email "juanjoseba98@gmail.com"
         git fetch
         git checkout main
+        cd ./dist
+        ls -la
         git pull
         git merge dev --allow-unrelated-histories
         git push
