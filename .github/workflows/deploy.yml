@@ -35,16 +35,13 @@ jobs:
         cd docs
         echo "empty docs"
         ls -la
-        mkdir HelloBuild-QA-Test
-        echo "docs with HelloBuild-QA-Test directory "
-        ls -la
         cd ..
         echo "Repo root"
         ls -la
         cd ./img-search
         echo "Proyect"
         ls -la
-        mv build/* ../docs/HelloBuild-QA-Test
+        mv build/* ../docs
         cd ..
         echo "Repo root"
         ls -la
