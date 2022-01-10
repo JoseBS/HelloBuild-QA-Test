@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/HelloBuild-QA-Test/static/css/main.a539ad51.chunk.css",
+    "main.js": "/HelloBuild-QA-Test/static/js/main.cb75f198.chunk.js",
+    "main.js.map": "/HelloBuild-QA-Test/static/js/main.cb75f198.chunk.js.map",
+    "runtime-main.js": "/HelloBuild-QA-Test/static/js/runtime-main.a66786a1.js",
+    "runtime-main.js.map": "/HelloBuild-QA-Test/static/js/runtime-main.a66786a1.js.map",
+    "static/js/2.e9afc37b.chunk.js": "/HelloBuild-QA-Test/static/js/2.e9afc37b.chunk.js",
+    "static/js/2.e9afc37b.chunk.js.map": "/HelloBuild-QA-Test/static/js/2.e9afc37b.chunk.js.map",
+    "static/js/3.f2af6f18.chunk.js": "/HelloBuild-QA-Test/static/js/3.f2af6f18.chunk.js",
+    "static/js/3.f2af6f18.chunk.js.map": "/HelloBuild-QA-Test/static/js/3.f2af6f18.chunk.js.map",
+    "index.html": "/HelloBuild-QA-Test/index.html",
+    "static/css/main.a539ad51.chunk.css.map": "/HelloBuild-QA-Test/static/css/main.a539ad51.chunk.css.map",
+    "static/js/2.e9afc37b.chunk.js.LICENSE.txt": "/HelloBuild-QA-Test/static/js/2.e9afc37b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a66786a1.js",
+    "static/js/2.e9afc37b.chunk.js",
+    "static/css/main.a539ad51.chunk.css",
+    "static/js/main.cb75f198.chunk.js"
+  ]
+}
