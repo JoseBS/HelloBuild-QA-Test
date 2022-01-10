@@ -22,6 +22,7 @@ jobs:
         yarn install
         yarn build
         rm -rf ../docs
+        mkdir ../docs/HelloBuild-QA-Test
         mv build/* ../docs/HelloBuild-QA-Test
         cd ..
         git config user.name "JoseBS"
