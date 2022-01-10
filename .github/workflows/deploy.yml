@@ -1,10 +1,10 @@
-name: Deploy
+name: Auto deploy
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow pull request events but only for the dev branch
   push:
-    branches: [ dev ]
+    branches: [ main ]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   merge:
@@ -28,11 +28,11 @@ jobs:
         cd ..
         git config user.name "JoseBS"
         git config user.email "juanjoseba98@gmail.com"
-        git fetch
-        git checkout main
         cd ./dist
         ls -la
-        git pull
-        git merge dev --allow-unrelated-histories
+        cd ..
+        rm -rf ./img-search
+        git add .
+        git commit -m "Auto deploy" -a
         git push
 #Random change to make a new push
